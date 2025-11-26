@@ -1,0 +1,89 @@
+
+simple_ai_client: system execution failed.
+Following is the set of recorded exceptions:
+
+:
+
+******************************** Thread exception *****************************
+******************************** Thread exception *****************************
+In thread           Root thread            0x0 (thread id)
+In thread           Root thread            0x0 (thread id)
+*******************************************************************************
+*******************************************************************************
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+NETWORK_STREAM_SOCKET
+NETWORK_STREAM_SOCKET
+                    c_read_stream          WSAENOTCONN: Socket is not connected.:
+<0000029773219C08>  <000001FFCF81CC08>  (From SOCKET)          Developer exception.          Fail
+-------------------------------------------------------------------------------
+(From SOCKET)          Developer exception.          Fail
+-------------------------------------------------------------------------------
+NETWORK_STREAM_SOCKET
+NETWORK_STREAM_SOCKET
+                    c_read_stream          
+<000001FFCF81CC08>  <0000029773219C08>  (From SOCKET)          Routine failure.              Fail
+-------------------------------------------------------------------------------
+NETWORK_STREAM_SOCKET
+NETWORK_STREAM_SOCKET
+                    read_into_pointer @6   
+                    read_into_pointer @6   
+<0000029773219C08>  <000001FFCF81CC08>  (From SOCKET)          Routine failure.              Fail
+-------------------------------------------------------------------------------
+(From SOCKET)          Routine failure.              Fail
+-------------------------------------------------------------------------------
+NETWORK_STREAM_SOCKET
+NETWORK_STREAM_SOCKET
+                    read_to_managed_pointer @5
+<000001FFCF81CC08>  (From SOCKET)          Routine failure.              Fail
+-------------------------------------------------------------------------------
+(From SOCKET)          Routine failure.              Fail
+-------------------------------------------------------------------------------
+SED_MEDIUM_READER_WRITER
+SED_MEDIUM_READER_WRITER
+                    read_buffer_from_medium @2
+                    read_buffer_from_medium @2
+<000001FFCF81D468>  <000002977321A468>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+                       Routine failure.              Fail
+-------------------------------------------------------------------------------
+SED_MEDIUM_READER_WRITER
+SED_MEDIUM_READER_WRITER
+                    read_header @2         
+<000001FFCF81D468>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+                       Routine failure.              Fail
+-------------------------------------------------------------------------------
+EQA_EVALUATOR       retrieved @3                                        
+EQA_EVALUATOR       retrieved @3                                        
+<0000029773218588>  <000001FFCF81B588>  (From SED_STORABLE_FACILITIES)
+(From SED_STORABLE_FACILITIES)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+EQA_EVALUATOR       retrieved_from_medium @4
+<0000029773218588>  <000001FFCF81B588>  (From SED_STORABLE_FACILITIES)
+(From SED_STORABLE_FACILITIES)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+EQA_EVALUATOR       main_loop @6                                        
+EQA_EVALUATOR       main_loop @6                                        
+<000001FFCF81B588>  <0000029773218588>                         Routine failure.              Rescue
+-------------------------------------------------------------------------------
+                       Routine failure.              Rescue
+-------------------------------------------------------------------------------
+EQA_EVALUATOR       make @12                                            
+<0000029773218588>  <000001FFCF81B588>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+EQA_EVALUATOR       root's creation                                     
+EQA_EVALUATOR       root's creation                                     
+<000001FFCF81B588>  <0000029773218588>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+                       Routine failure.              Exit
+-------------------------------------------------------------------------------

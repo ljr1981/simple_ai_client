@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Tests for {OLLAMA_CLIENT}"
 	testing: "type/manual"
 
@@ -114,9 +114,9 @@ feature -- Test routines
 			print ("Success: " + l_response.is_success.out + "%N")
 
 			if l_response.is_success then
-				print ("✓ Ollama server running%N")
+				print ("â Ollama server running%N")
 			else
-				print ("✗ Ollama server not running%N")
+				print ("â Ollama server not running%N")
 				if attached l_response.error_message as al_err then
 					print ("Error: " + al_err + "%N")
 				end
@@ -200,6 +200,47 @@ feature -- Test routines
 			else
 				print ("Ollama not running%N")
 			end
+		end
+
+feature -- Eiffel Coding with Ollama
+
+	test_architecture_task
+			--
+		note
+			testing: "execution/isolated", "covers/{AI_CLIENT}.use_concise_responses"
+		local
+			l_client: OLLAMA_CLIENT
+			l_response: AI_RESPONSE
+		do
+			create l_client.make
+			l_client.use_concise_responses
+			prompt_1.do_nothing
+			l_response := l_client.ask (prompt_1)
+
+			print ("%N=== Concise Test ===%N")
+			print ("Length: " + l_response.text.count.out + " chars%N")
+			print ("Response: " + l_response.text + "%N")
+
+			if l_response.is_success then
+				assert_true ("has_response", not l_response.text.is_empty)
+			else
+				print ("Ollama not running%N")
+			end
+		end
+
+	prompt_1: STRING_32
+			--
+		local
+			l_file: PLAIN_TEXT_FILE
+		once
+			create Result.make_from_string_general ("NEED: I need a shopping cart that holds items and calculates totals. Follow the guidance found in the eiffel_mini_guide below. Give me your results as JSON. %N%N")
+
+			create l_file.make_open_read ("C:\Users\LJR19\OneDrive\Desktop\Eiffel-libs\claude-instruction-pack\eiffel_mini_guide.txt")
+			l_file.read_stream (l_file.count)
+			Result.append (l_file.last_string)
+			l_file.close
+		ensure
+			result_not_empty: not Result.is_empty
 		end
 
 note
